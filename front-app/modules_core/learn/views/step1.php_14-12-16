@@ -1,0 +1,63 @@
+<!--<style type="text/css">
+	.tooltip{
+		margin:8px;
+		padding:10px;
+		border:1px solid #F2E214;
+		background-color:#fff;
+		position: absolute;
+		z-index: 2;
+		color:#333;
+		font-size:14px;
+}
+</style>-->
+<div class="stepPage">
+  		<div class="container">
+              <h2 class="title">COMPLETE THE LESSONS BY SELECTING THE PANELS BELOW</h2>
+             <div class="topicArea clearfix">
+              <?php
+              if(isset($step_learn) && is_array($step_learn) && count($step_learn)>0)
+              {
+                $i = 0;
+                ?>
+             	<ul>
+                  <?php
+                  foreach($step_learn as $learn_dtls)
+                  {
+                    $i ++;
+                    ?>
+                    <li class="<?php echo $learn_dtls['learn_class'];?>" data-title="<?php echo 'Click here to learn all about '.stripslashes($learn_dtls['name']).' <br/>Then go to Step 2 to take lesson tests on '.stripslashes($learn_dtls['name']);?>">
+                    <a href="<?php echo FRONTEND_URL.'learn/learn_details/'.$learn_dtls['id'];?>">
+                    	<div class="topicBox">
+		          <div class="topicImg"><img src="<?php echo FRONTEND_URL.'images/topic.png';?>"></div>		
+                          <h3 class="topicTitle"><span>Lesson <?php echo $i;?></span></h3>
+                          <h4 class="topicSub">Lesson <?php echo $i;?> - <?php echo stripslashes($learn_dtls['name']);?></h4>
+                          <div class="topicContent">
+                            	<p><?php echo stripslashes($learn_dtls['short_description']);?></p>
+                            </div>
+                        </div>
+                        <div class="tpoicImg"><img src="<?php echo FILE_UPLOAD_URL;?>topic/thumbs/<?php echo $learn_dtls['image'];?>" alt=""></div>
+	           </a>
+                    </li>
+                    <?php
+                  }
+                  ?>
+		 
+                <!--<li <?php if($getReadCount['total_read_lesson'] == $getReadCount['total_lesson']){echo "class='green'";}elseif($getReadCount['total_read_lesson']> 0){echo "class='red'";}?> data-title="My Lessons"> <a href="<?php echo FRONTEND_URL.'learn/mylesson/'; ?>">
+		<div class="topicBox">
+		  <h3 class="topicTitle">Topic</h3>
+		  <h4 class="topicSub">My Lessons</h4>
+		  <div class="topicContent">
+		    <p>All lessons you have added to My Lessons</p>
+		  </div>
+		</div>
+		<div class="tpoicImg"><img alt="" src="<?php echo FRONTEND_URL;?>images/stepImg6.jpg"></div>
+		</a>
+		</li>-->	
+                </ul>
+                <?php } else { ?>
+                <ul><li>No Record Found</li></ul>
+                <?php } ?>
+		
+             </div>       
+        </div>
+  </div>

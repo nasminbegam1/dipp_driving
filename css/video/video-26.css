@@ -1,0 +1,47 @@
+/* Video 26 */
+.c-1 {margin: 10% 0 0 63%;width: 8%;height: 13%;}
+.a-1 {margin: 7% 0 0 19%;} 
+.c-2 {     margin: 3% 0 0 23%;
+    width: 13%;
+    height: 23%; }
+.a-2 {margin: 6% 0 0 20%;} 
+
+.c-3,
+.c-4,
+.c-5,
+.c-6,
+.c-7 { border-color: red; display: none; }
+
+.c-3 {    margin: 10.5% 0 0 59%;
+    width: 7%;
+    height: 13%; cursor: pointer;}
+
+.a-3,
+.a-4,
+.a-5,
+.a-6,
+.a-7  {margin: 29.5% 0 0 18%;}
+
+
+/* 
+*	Hazard 
+*/
+.c-3.cv_move { animation-duration: 14s; animation-name: cv_move;    margin: 10.5% 0 0 59%;
+    width: 7%;
+    height: 13%;display: block; opacity: 0;}
+@-webkit-keyframes cv_move { 
+	0% {     margin: 10.5% 0 0 59%;
+    width: 7%;
+    height: 13%; } 
+	50% { margin: 6.5% 0 0 58%; width: 18%; height: 31%; } 
+	100% { margin: 2.5% 0 0 54%; width: 24%; height: 44%; }
+}
+
+
+/* 
+*	End Hazard 
+*/
+
+
+
+

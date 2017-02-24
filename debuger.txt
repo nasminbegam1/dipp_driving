@@ -1,0 +1,43 @@
+/pass_guarantee/paypal_notify : 
+mc_gross : 5.00
+protection_eligibility : Eligible
+address_status : confirmed
+payer_id : 8KPKYYAA4MWH2
+tax : 0.00
+address_street : 1 Main St
+payment_date : 02:48:16 Jun 30, 2016 PDT
+payment_status : Completed
+charset : windows-1252
+address_zip : 95131
+first_name : Ashes
+mc_fee : 0.45
+address_country_code : US
+address_name : Ashes  Pal's Test Store
+notify_version : 3.8
+custom : 14
+payer_status : verified
+business : ashespal321@gmail.com
+address_country : United States
+address_city : San Jose
+quantity : 1
+verify_sign : AaGA7dxUVZw5GmuCh4DRZwG.tV5IAELmCBUh2YcTbZchEBQYkKrlyVLj
+payer_email : ashes321@gmail.com
+txn_id : 26515926XG593282J
+payment_type : instant
+payer_business_name : Ashes  Pal's Test Store
+last_name : Pal
+address_state : CA
+receiver_email : ashespal321@gmail.com
+payment_fee : 0.45
+receiver_id : WVNHY9WHKKWUL
+txn_type : web_accept
+item_name : Samsusung Galaxy
+mc_currency : USD
+item_number : 
+residence_country : US
+test_ipn : 1
+handling_amount : 0.00
+transaction_subject : 
+payment_gross : 5.00
+shipping : 0.00
+ipn_track_id : d8f09961e1a92

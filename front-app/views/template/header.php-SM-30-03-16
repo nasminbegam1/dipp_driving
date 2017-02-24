@@ -1,0 +1,110 @@
+<header>
+    <?php
+    $student_id 	= $this->session->userdata('STUDENT_ID');
+    $instructor_id 	= $this->session->userdata('INSTRUCTOR_ID');
+    ?>
+    <div class="container">            
+	<div class="logo-box">
+	    <a href="<?php echo base_url();?>"><img src="<?php echo base_url();?>images/logo.png" alt="logo" /></a>
+	</div>
+	<!--logo-box-->
+	<div class="top-contact">
+	<?php if(isset($student_id) && $student_id != ''){ ?>
+	    <div class="contact-no dds-header">
+		<?php if($ins_logo != '' && file_exists(FILE_UPLOAD_ABSOLUTE_PATH.'instructor_logo/thumbs/'.$ins_logo)){ ?>
+		  <img src="<?php echo FILE_UPLOAD_URL.'instructor_logo/thumbs/'.$ins_logo;?>" alt="<?php echo $business_name; ?>" title="<?php echo $business_name; ?>" />
+		<?php } ?>
+                
+            </div> 
+	<?php } else if(isset($instructor_id) && $instructor_id != ''){ ?>
+	    
+	    <div class="contact-no dds-header">
+                <?php if($ins_logo != '' && file_exists(FILE_UPLOAD_ABSOLUTE_PATH.'instructor_logo/thumbs/'.$ins_logo)){ ?>
+		  <img src="<?php echo FILE_UPLOAD_URL.'instructor_logo/thumbs/'.$ins_logo;?>" alt="<?php echo $business_name; ?>" title="<?php echo $business_name; ?>"/>
+		<?php } ?>
+		<?php if($instructor_payment_status == 'free'){?>
+		<p><a href="#"><span class="days-left"><?php echo $remaining_days;?> days</span> left</a></p>
+		<?php } ?>
+            </div> 
+	<?php }else{ ?>
+	<div class="social-box">
+		<ul>
+		    <li><a href="<?php echo (isset($settings['facebook_link']) && $settings['facebook_link']!= '')?$settings['facebook_link']:'#';?>" <?php echo (isset($settings['facebook_link']) && $settings['facebook_link']!= '')?'target="_blank"':'';?> class="facebook"></a></li>
+		    <li><a href="<?php echo (isset($settings['twitter_link']) && $settings['twitter_link']!= '')?$settings['twitter_link']:'#'; ?>" <?php echo (isset($settings['twitter_link']) && $settings['twitter_link']!= '')?'target="_blank"':'';?> class="twitter"></a></li>
+		    <li><a href="<?php echo (isset($settings['linkedin_link']) && $settings['linkedin_link']!= '')?$settings['linkedin_link']:'#';?>" <?php echo (isset($settings['linkedin_link']) && $settings['linkedin_link']!= '')?'target="_blank"':'';?> class="linkedin"></a></li>
+		    <li><a href="<?php echo (isset($settings['googleplus_link']) && $settings['googleplus_link']!= '')?$settings['googleplus_link']:'#';?>" <?php echo (isset($settings['googleplus_link']) && $settings['googleplus_link']!= '')?'target="_blank"':'';?> class="googleplus"></a></li>
+		</ul>
+	    </div> 
+	    <div class="contact-no">
+		<p>Telephone :<a href="<?php echo (isset($settings['phone_no']) && $settings['phone_no']!= '')?'tel:'.$settings['phone_no']:'#'; ?>"><?php echo $settings['phone_no']; ?></a></p>
+	    </div>                
+	</div>
+	<?php } ?>
+	<!--top-contact-->            
+    </div>
+</header>
+
+
+  <?php
+  if(isset($student_id) && $student_id != ''){
+    ?>
+      <nav id="nav2">
+      <div class="container">
+        <ul class="menu">
+          <li><a class="<?php echo activate_menu('learn','index');?>" href="<?php echo FRONTEND_URL.'learn';?>">Home</a></li>
+	  <?php 
+	  foreach($step_dtls as $k=>$step) { 
+	  ?>
+	  <li><a class="<?php echo activate_menu('learn','step',$step['id']);?>" href="<?php echo FRONTEND_URL.'learn/step/'.$step['id'];?>"><?php echo 'Step '.($k+1).' - '.$step['name'];?></a></li>
+	  <?php } ?>
+          <li><a href="javascript:void(0);" <?php echo (currentClass()=='student' && (currentMethod()=='editProfile' || currentMethod()=='changePassword'))?'class="active"':'';?>>Settings</a>
+	    <ul>
+              <li><a href="<?php echo base_url().'student/editProfile'?>">Edit Profile</a></li>
+              <li><a href="<?php echo base_url().'student/changePassword'?>">Change Password</a></li>
+              <li><a href="<?php echo base_url().'student/logout'?>">Logout</a></li>
+            </ul>
+	  </li>         
+        </ul>
+      </div>      
+    </nav>
+    <!--end nav-->
+    <?php }else if(isset($instructor_id) && $instructor_id != ''){?>
+    <nav>
+    <div class="container">                
+      <ul class="menu">
+	<li><a <?php echo (currentClass()=='student' && currentMethod()=='active_users')?'class="active"':'';?> href="<?php echo base_url().$instractorBusinessName.'/active_users'?>">ACTIVE USERS</a></li>
+	<li><a <?php echo (currentClass()=='student' && currentMethod()=='past_users')?'class="active"':'';?> href="<?php echo base_url().$instractorBusinessName.'/past_users'?>">PAST USERS</a></li>          
+	<li><a <?php echo (currentClass()=='student' && (currentMethod()=='all_list' || currentMethod()=='add' || currentMethod()=='edit'))?'class="active"':'';?> href="<?php echo base_url().$instractorBusinessName.'/all_list'?>">USER MANAGEMENT</a></li>
+	<li><a <?php echo (currentClass()=='faq' && currentMethod()=='index')?'class="active"':'';?> href="<?php echo base_url().$instractorBusinessName.'/faq';?>">FAQs</a></li> 
+	<li>
+	  <a href="javascript:void(0);" <?php echo (currentClass()=='instructor' && (currentMethod()=='editProfile' || currentMethod()=='changePassword'))?'class="active"':'';?>>SETTINGS</a>
+	  <ul>
+	    <li><a href="<?php echo base_url().$instractorBusinessName.'/edit-profile'?>">Edit Profile</a></li>
+	    <li><a href="<?php echo base_url().$instractorBusinessName.'/change-password'?>">Change Password</a></li>
+	    <li><a href="<?php echo base_url().$instractorBusinessName.'/card-details-change'?>">Card Details Change</a></li>
+	    <?php if($instructor_payment_status !='cancel'){ ?>
+	    <li><a href="<?php echo base_url().$instractorBusinessName.'/cancel-payment'?>">Payment Cancel</a></li>
+	    <?php } ?>
+	    <li><a href="<?php echo base_url().'instructor/logout'?>">Logout</a></li>
+	  </ul>
+	</li>         
+      </ul>
+    </div>      
+  </nav>
+
+    <?php }else{ ?>
+    <nav>
+      <div class="container">          
+	<ul class="menu">
+	    <li><a class="<?php echo activate_menu('learn','index');?>" href="<?php echo FRONTEND_URL.'learn';?>">Home</a></li>
+	  <li><a <?php echo (currentClass()=='cms' && currentMethod()=='index' && $this->uri->segment(1) == 'about')?'class="active"':'';?> href="<?php echo base_url().'about'?>">About</a></li>
+	  <li>      
+	    <a <?php echo (currentClass()=='cms' && currentMethod()=='how_it_workes')?'class="active"':'';?> href="<?php echo base_url().'how-it-workes'?>">How It Works</a></li>          
+	  <li><a <?php echo (currentClass()=='price' && currentMethod()=='index')?'class="active"':'';?> href="<?php echo base_url().'price'; ?>">Pricing</a></li>
+	  <li><a href="<?php echo base_url().'price'; ?>" <?php echo (currentClass()=='instructor' && currentMethod()=='signup')?'class="active"':'';?>>Sign Up</a></li>
+	  <li><a <?php echo (currentClass()=='faq' && currentMethod()=='index')?'class="active"':'';?> href="<?php echo base_url().'faq';?>">FAQs</a></li>          
+	</ul>
+      </div>      
+    </nav>
+    <!--end nav-->
+    <?php } ?>

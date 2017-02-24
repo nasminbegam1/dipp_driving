@@ -1,0 +1,318 @@
+// JavaScript Document
+
+(function($) {
+	$(document).ready(function() {
+
+		$('#frm_login').validationEngine();
+        	$('#frm_category').validationEngine();
+		$('#frm_pass').validationEngine();
+		$('#frm_email').validationEngine();
+        	$('#frm_attribute').validationEngine();
+		$('#frm_seller').validationEngine();
+		$('#frm_cms').validationEngine();
+		$('#frm_service').validationEngine();
+                                
+		//-------------------- Delete -----------------
+
+		$(".deleteitem")
+		.unbind()
+		.bind('click',function() {
+			if(confirm("Are you sure to delete this record?")) {
+				var url = $(this).attr('href');
+				window.location.href = url;
+			} else {
+				return false;
+			}
+		});
+
+//-------------------- Change status ------------------
+
+		$(".changestatus")
+			.unbind()
+			.bind('click',function() {
+			if(confirm("Are you sure to change status of this record?")) {
+				var url = $(this).attr('href');
+				window.location.href = url;
+			} else {
+				return false;
+			}
+		});
+
+//-------------------- Logout ----------------------
+
+		$(".logout")
+		.unbind()
+		.bind("click", function(event) {
+			var curObj = $(this);
+			var anchorLink = curObj.attr('href');
+			event.preventDefault();
+			if(confirm("Are you sure to logout from Admin Panel?")){
+				window.location.href = anchorLink;
+			} else {
+				return false;
+			}
+		});
+
+
+/*-------------  FOR ALERT OR MESSAGE DISPLAY -------------*/
+$('.confirmDelete').click(function (e) {
+        e.preventDefault();
+        _targetUrl=$(this).attr("href");
+        $("<div></div>").html("Are you sure to delete this record?").dialog({
+            title: "Alert",
+            resizable: false,
+            height: 140,
+            modal: true,
+            buttons: {
+                Ok: function () {
+                    window.location.href =_targetUrl;
+                 },
+                Cancel: function () {
+                    $(this).dialog("close");
+                 }
+            }
+        });
+
+});
+
+
+$('.statusChange').click(function (e) {
+        e.preventDefault();
+        _targetUrl=$(this).attr("href");
+        $("<div></div>").html("Are you sure to change status?").dialog({
+            title: "Alert",
+            resizable: false,
+            height: 140,
+            modal: true,
+            buttons: {
+                Ok: function () {
+                    window.location.href =_targetUrl;
+                 },
+                Cancel: function () {
+                    $(this).dialog("close");
+                 }
+            }
+        });
+
+});
+
+
+	$("#cat_name").keyup(function() { 
+		var cat= $("#cat_name").val();
+		var catId= $("#cat_id").val();
+		var postData= "action=availability&cat_name="+ cat;
+		if(cat && catId){
+			var postData= "action=availability&cat_name="+ cat+"&cat_id="+catId; 
+		}    
+		if(cat.length >= 3){
+			$("#status").html('<img src="'+_baseUrl+'/images/loader.gif" align="absmiddle">&nbsp;Checking availability...');
+			$.ajax({  
+				type: "POST",  
+				url: _baseUrl+"category/uniqueCheck",  
+				data: postData,  
+				success: function(msg){
+					if(msg == 'OK'){ 
+						$("#cat_name").removeClass('object_error'); // if necessary
+						$("#cat_name").addClass("object_ok");
+						$('#status').html('&nbsp;<img src="'+_baseUrl+'/images/tick.gif" align="absmiddle">');
+					}  
+					else{  
+						$("#cat_name").val('');
+						$("#cat_name").removeClass('object_ok'); // if necessary
+						$("#cat_name").addClass("object_error");
+						$('#status').html(msg);
+					}  
+				} 
+			}); 
+		}
+		else{
+			$("#status").html('<font color="red">' + 'The category should have at least <strong>3</strong> characters.</font>');
+			$("#cat_name").removeClass('object_ok'); // if necessary
+			$("#cat_name").addClass("object_error");
+		}
+	});
+	
+	
+	
+	$("#seller_email").keyup(function() { 
+		var pattern = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i;
+		var seller= $("#seller_email").val();
+		if(pattern.test(seller)) {
+		var sellerId= $("#seller_id").val();
+		var postData= "action=availability&seller_email="+ seller;
+		if(seller && sellerId){
+			var postData= "action=availability&seller_email="+ seller+"&seller_id="+sellerId; 
+		}    
+		if(seller.length >= 3){
+			$("#status").html('<img src="'+_baseUrl+'/images/loader.gif" align="absmiddle">&nbsp;Checking availability...');
+			$.ajax({  
+				type: "POST",  
+				url: _baseUrl+"seller/uniqueCheck",  
+				data: postData,  
+				success: function(msg){
+					if(msg == 'OK'){ 
+						$("#seller_email").removeClass('object_error'); // if necessary
+						$("#seller_email").addClass("object_ok");
+						$('#status').html('&nbsp;<img src="'+_baseUrl+'/images/tick.gif" align="absmiddle">');
+					}  
+					else{  
+						$("#seller_email").val('');
+						$("#seller_email").removeClass('object_ok'); // if necessary
+						$("#seller_email").addClass("object_error");
+						$('#status').html(msg);
+					}  
+				} 
+			}); 
+		}
+		else{
+			$("#status").html('<font color="red">' + 'The seller should have at least <strong>3</strong> characters.</font>');
+			$("#seller_email").removeClass('object_ok'); // if necessary
+			$("#seller_email").addClass("object_error");
+		}
+		} 
+	});
+	
+	
+	$("#content_title").keyup(function() { 
+		var cms= $("#content_title").val();
+		var cmsId= $("#content_id").val();
+		var postData= "action=availability&content_title="+ cms;
+		if(cms && cmsId){
+			var postData= "action=availability&content_title="+ cms + "&cms_id=" + cmsId; 
+		}    
+		if(cms.length >= 3){
+			$("#status").html('<img src="'+_baseUrl+'/images/loader.gif" align="absmiddle">&nbsp;Checking availability...');
+			$.ajax({  
+				type: "POST",  
+				url: _baseUrl+"cms/uniqueCheck",  
+				data: postData,  
+				success: function(msg){ 
+					if(msg == 'OK'){ 
+						$("#content_title").removeClass('object_error'); // if necessary
+						$("#content_title").addClass("object_ok");
+						$('#status').html('&nbsp;<img src="'+_baseUrl+'/images/tick.gif" align="absmiddle">');
+					}  
+					else{  
+						$("#content_title").val('');
+						$("#content_title").removeClass('object_ok'); // if necessary
+						$("#content_title").addClass("object_error");
+						$('#status').html(msg);
+					}  
+				} 
+			}); 
+		}
+		else{
+			$("#status").html('<font color="red">' + 'The cms should have at least <strong>3</strong> characters.</font>');
+			$("#content_title").removeClass('object_ok'); // if necessary
+			$("#content_title").addClass("object_error");
+		}
+	});
+
+	
+	
+
+
+ 
+ 
+$("#FormAttribute").click(function(e) { 
+//e.preventDefault(); 
+var attribute_code     = $("#attr_code").val().trim();
+var attribute_name     = $("#attr_name").val().trim();
+var attrId             = $("#attr_id").val();
+var attrValue          =[];
+var data_set           =false;
+var attrValuesAll      ='';
+if(attribute_code =='' || attribute_name =='')
+{   
+    custom_alert('Here attribute code or attribute name field is blank!');
+    $(".tab_lang").removeClass("current");
+    $("#tab-1").addClass("current");
+    $(".tab-content").hide();
+    $("#content-1").hide().fadeIn(500);
+    $("#mapid").val('1');
+    return false;
+}   
+else if(attribute_code !='' && attribute_name!='') {
+    $('.attr_val').each(function(){
+        if($(this).val().trim()) {
+        attrValue.push($(this).val().trim());
+        }
+    });
+}
+
+if (attrValue.length === 0) 
+{
+    custom_alert('Please filled up the attribute option lists!');
+    $(".tab_lang").removeClass("current");
+    $("#tab-2").addClass("current");
+    $(".tab-content").hide();
+    $("#content-2").hide().fadeIn(500);
+    $("#mapid").val('2');
+    return false;
+} 
+else {
+	return true;
+}
+/*else {
+    var attrValuesAll=attrValue.join(',');
+    var postData="attr_code="+attribute_code+"&attr_name="+attribute_name+"&attr_values="+attrValuesAll;
+    $("#status").html('<img src="'+_baseUrl+'/images/loader.gif" align="absmiddle">&nbsp;Checking availability...');
+    $.ajax({  
+    type: "POST",  
+    url: _baseUrl+"attribute/add",  
+    data: postData,  
+    success: function(msg){ if(msg == 'ok'){window.location.href=''+_baseUrl+'attribute/add';}
+        setTimeout(function () {
+        $("#flashmessage").animate({opacity:0,height:0,"top": "-=50px"}, {duration:1000}, function() {
+        $(this).remove();
+        });
+
+        }, 10000);
+        $("#closemessage").click( function () { $(this).parent("div").fadeOut("slow"); });
+        } 
+    
+  }); 
+  }*/ 
+});
+ 
+
+
+
+/*--------------------------------------- END -----------------------------------------*/
+
+//------------------------- End $(document).ready() -------------------
+	});
+
+})(jQuery);
+
+
+function show_all(url){
+document.frmSearch.searchText.value = "";
+document.frmSearch.action = url;
+document.frmSearch.submit();
+}
+/*-------------  FOR ALERT OR MESSAGE DISPLAY -------------*/
+function custom_alert(output_msg, title_msg)
+{
+    if (!title_msg)
+        title_msg = 'Alert';
+
+    if (!output_msg)
+        output_msg = 'No Message to Display.';
+
+    $("<div></div>").html(output_msg).dialog({
+        title: title_msg,
+        resizable: false,
+        modal: true,
+        buttons: {
+            "Ok": function()
+            {
+                $( this ).dialog( "close" );
+            }
+        }
+    });
+}
+
+
+
+

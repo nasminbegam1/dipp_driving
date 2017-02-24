@@ -1,0 +1,57 @@
+Array
+(
+    [/world_payment/payment_notification/] => 
+    [country] => IN
+    [authCost] => 5.00
+    [msgType] => authResult
+    [routeKey] => VISA-SSL
+    [MC_type] => passGuaranteePayment
+    [transId] => 3052276438
+    [countryMatch] => S
+    [rawAuthMessage] => cardbe.msg.authorised
+    [authCurrency] => USD
+    [charenc] => UTF-8
+    [compName] => DUTCHURST SOLUTIONS LTD
+    [rawAuthCode] => A
+    [amountString] => US&#36;5.00
+    [installation] => 1124265
+    [currency] => USD
+    [tel] => 
+    [fax] => 
+    [lang] => en
+    [countryString] => India
+    [email] => nasmin.begam@webskitters.com
+    [transStatus] => Y
+    [_SP_charEnc] => UTF-8
+    [amount] => 5.00
+    [address] => bf-170
+
+
+kolkata
+    [transTime] => 1469106341774
+    [cost] => 5.00
+    [town] => kolkata
+    [address3] => 
+    [address2] => 
+    [address1] => bf-170
+    [cartId] => 1
+    [postcode] => 
+    [ipAddress] => 182.73.184.6
+    [cardType] => Visa
+    [authAmount] => 5.00
+    [authMode] => A
+    [futurePayId] => 20037199
+    [instId] => 1124265
+    [displayAddress] => bf-170
+
+
+kolkata
+    [AAV] => 00000
+    [testMode] => 100
+    [name] => Nasmin
+    [callbackPW] => 
+    [region] => 
+    [AVS] => 0111
+    [desc] => Car theory test with unlimited re-tests
+    [authAmountString] => US&#36;5.00
+)

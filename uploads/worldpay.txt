@@ -1,0 +1,54 @@
+Array
+(
+    [/world_payment/payment_notification/] => 
+    [country] => IN
+    [authCost] => 
+    [msgType] => authResult
+    [routeKey] => ECMC-SSL
+    [countryMatch] => B
+    [rawAuthMessage] => trans.fpCreatedNoAuth
+    [authCurrency] => USD
+    [charenc] => UTF-8
+    [compName] => DUTCHURST SOLUTIONS LTD
+    [rawAuthCode] => A
+    [amountString] => US&#36;0.00
+    [installation] => 1124265
+    [currency] => USD
+    [tel] => 
+    [fax] => 
+    [lang] => en
+    [countryString] => India
+    [email] => nasmin.begam@webskitters.com
+    [transStatus] => Y
+    [_SP_charEnc] => UTF-8
+    [amount] => 0.00
+    [address] => bf-170
+
+
+Kolkata
+    [cost] => 0.00
+    [town] => Kolkata
+    [address3] => 
+    [address2] => 
+    [address1] => bf-170
+    [cartId] => 17
+    [postcode] => 
+    [ipAddress] => 182.73.184.6
+    [cardType] => MasterCard
+    [authAmount] => 
+    [authMode] => A
+    [futurePayId] => 20037201
+    [instId] => 1124265
+    [displayAddress] => bf-170
+
+
+Kolkata
+    [AAV] => 00000
+    [testMode] => 100
+    [name] => NAsmin
+    [callbackPW] => 
+    [region] => 
+    [AVS] => 0000
+    [desc] => 
+    [authAmountString] => 
+)

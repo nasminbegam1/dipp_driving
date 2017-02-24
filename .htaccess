@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteCond $1 !^(index\.php|images|style|js|css|models|FCKeditor|dbadmin|email_template|uploads|fonts|videos)
+RewriteRule ^(.*)$ /dipp_driving/index.php?/$1 [L]

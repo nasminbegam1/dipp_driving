@@ -1,0 +1,1 @@
+<div class="content"><h3 class="successfull"><span><i class="fa fa-check-circle"></i></span> Payment has been made Successfully!</h3></div>

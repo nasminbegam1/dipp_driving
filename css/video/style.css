@@ -1,0 +1,67 @@
+#c2 {
+	background-image: url(../../images/foo.png);
+	background-repeat: no-repeat;
+}
+
+/* Plugin CSS */
+#video,#videoes { width: 740px;background: rgb(0, 0, 0) url(../../images/bg.png) repeat;padding: 0 0 34px 0;border-radius: 3px; opacity: 0;position: relative;margin: 20px auto;} 
+
+.video-overlay, .video-score { display: none;position: absolute;z-index: 3;height: auto;margin-left: -1px;margin-top: 100px;width: 100%;background: rgba(0,0,0,0.7);border-radius: 0;m;color:  #fff; text-align: center; line-height: 30px;font-family: Arial, Helvetica, sans-serif; font-size: 13px;}
+.video-overlay-pause { background: none; font-size: 0px; display: block; } 
+.video-score {background: rgba(84, 185, 224, 0.92); display: block;border: 1px solid #000000;padding: 20px 2px;color: rgb(255, 255, 255);text-shadow: 1px 1px 0px rgb(39, 33, 33);}
+.video-play { opacity: 0.9; width: 40px; height: 40px;margin: -100px auto 45px;position: relative;z-index: 2;border-radius: 60px; background: rgba(255,255,255,0.8) url(../../images/play.png) no-repeat; cursor: pointer;} 
+.video-play:hover { opacity: 1; }
+.video-ui-progress { opacity: 1; max-height: 15px; } 
+.ui-slider-tick-mark {height: 34px;margin-top: -9px; display: inline-block; width: 5px; background: black; position:absolute; z-index: 2; opacity: 0.7 }
+.video-ui .ui-slider {height: 8px; border: none;background: transparent;border-radius: 30px;margin-top:86px;border-bottom: 2px dotted rgba(232, 195, 60, 0.36);}
+.ui-slider-tick-mark-r {background: url(../../images/hazard.png) repeat; width: 3px;opacity: 0.2;margin-top: -10px;} 
+.r-clicked {opacity: 0.8; background: url(../../images/flag.gif) no-repeat;height: 15px;margin-top: 0px;margin-left: -7px;z-index: 5;width: 15px;}
+
+span.ui-slider-tick-mark.ui-slider-tick-mark-r.r-clicked {}
+
+span.ui-slider-tick-mark.ui-slider-tick-mark-r.r-clicked {}
+.ui-slider-tick-mark-b { background: #1a7ecd; } 
+.ui-slider-tick-mark-y { background: #efff1b; } 
+.ui-slider-tick-mark-g { background: none; background: url(../../images/tick-green.png) no-repeat; width: 9px; height: 8px; margin-left: -2px; top: 10px;} 
+.video-ui .ui-slider-handle {width: 5px; left: 0%;height: 5px; border-radius: 60px;margin: -10px 0px 0;background: #4DFF2D; border: none; display: none;} 
+.video-car { background: url(../../images/car.png) no-repeat; position: absolute; display: block;width: 36px;height: 15px;padding-left: 6px;margin: -5px 0px 0px -8px;}
+.blip { width: 5px; left: 0%;height: 5px; border-radius: 60px;margin: 6px 0px 0;background: #4DFF2D; border: none; animation: slider-glow 1s infinite; animation-timing-function: ease-out; animation-direction: alternate;}  
+
+	/* Glow */
+	@-webkit-keyframes slider-glow { 
+		0% { opacity:0; }
+		100% { opacity: 1; }
+	}
+
+
+.button { border-radius: 3px; width: auto; height: 30px;background: #FFFFFF; display: inline-block;padding:  0 10px;text-shadow: 1px 1px 0px #fff;cursor:  pointer;margin:  0 5px;font-weight: bold;color: #000;} 
+.button:hover {color: #A9450A;}
+/* Annotations */
+.video-annotations { position: absolute; text-align: center; width: 740px; } 
+.va-circle {display: none; z-index: 1; border-radius: 180px;width: 75px;height: 75px;margin: 145px 0 0 336px;border: 5px solid rgb(255, 247, 0); position:  relative;}
+.va-square { display: none; width: 75px; height: 75px; border: 5px solid #00ADFF; z-index: 1; position: relative; border-radius: 3px; }
+.text { display: none; width: 300px; background:  rgba(0,0,0,0.7); padding:  10px; border-radius: 5px; font: 14px Arial, Helvetica, sans-serif;color:#ffffff;}
+.text .va-score {
+    display: inline-block; position: relative; margin: 0;
+} 
+
+.va-score { width: 90px;
+    background: rgba(255,255,255,0.8);
+    border-radius: 5px;
+    color: #BB3A3A;
+    height: 40px;
+    position: absolute;
+    font-size: 18px;
+    line-height: 40px;
+    font-weight: 500;}
+	
+/* Copy */
+.copy {width: auto;height: 20px;position: absolute;z-index: 99;font-family: roboto;color: rgba(181, 165, 165, 0.51);margin-left: 10px;
+margin-top: -30px; font-weight: 500;} 
+
+/* Videos */
+.a-1, .a-2, .a-3, .a-4, .a-5, .a-6, .a-7, .a-8, .a-9, .a-10, .a-11, .a-12, .a-13, .a-14, .a-15, .a-16 {  width: 60%; }
+.a-1, .a-2, .a-3, .a-4, .a-5, .a-6, .a-7, .a-8, .a-9, .a-10, .a-11, .a-12, .a-13, .a-14, .a-15, .a-16,
+.c-1, .c-2, .c-3, .c-4, .c-5, .c-6, .c-7, .c-8, .c-9, .c-10, .c-11, .c-12, .c-13, .c-14, .c-15, .c-16 { display: block; } 
+.c-1, .c-2, .c-3, .c-4, .c-5, .c-6, .c-7, .c-8, .c-9, .c-10, .c-11, .c-12, .c-13, .c-14, .c-15, .c-16 { width: 7.4%; height: 13%;  }
+

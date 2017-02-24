@@ -1,0 +1,35 @@
+/* Video 17 */
+.c-1,
+.c-2,
+.c-3,
+.c-4,
+.c-5 { border-color: red; display: none;}
+
+.a-1,
+.a-2,
+.a-3,
+.a-4,
+.a-5 {margin: 31.5% 0 0px 9%; width: 80%;} 
+
+
+.c-1 {margin: 14% 0 0 74%; width: 8%; height: 14%;cursor: pointer;display: none;opacity: 1;}
+
+
+.c-6 { margin: 15% 0 0 34.5%; } 
+.a-6 { margin: 2% 0 0 14%; } 
+.c-7 { margin: 15% 0 0 34.5%; } 
+.a-7 { margin: 2% 0 0 14%; } 
+.c-8 { margin: 16% 0 0 71%; } 
+.a-8 { margin: 5% 0 0 29%;width: 40%; }
+/* 
+*	Hazard 
+*/
+.c-1.cv_move { animation-duration: 4.8s; animation-name: cv_move;margin: 14.5% 0 0 39.5%; width: 9%;height: 16%;display: block;opacity: 0;}
+@-webkit-keyframes cv_move { 
+	0% { margin: 14.5% 0 0 39.5%; }
+	20% { margin: 13% 0 0 67.5%; width: 12%; height: 21%; }
+	40% { margin: 11% 0 0 56.5%; width: 17%; height: 30%; }
+	60% { margin: 11% 0 0 56.5%; width: 17%; height: 30%; }
+	80% { margin: 12% 0 0 49.5%; width: 17%; height: 30%; }
+	100% { margin: 12% 0 0 49.5%; width: 17%; height: 30%; }
+}

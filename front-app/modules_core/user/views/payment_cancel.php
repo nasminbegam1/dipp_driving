@@ -1,0 +1,1 @@
+<div class="content"><h3 class="cancel"><span><i class="fa fa-times-circle"></i></span> Payment Canceled</h3></div>

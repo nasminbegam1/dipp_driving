@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteCond $1 !^(index\.php|uploads|thumbs|images|font|css|js|fckeditor)
+RewriteRule ^(.*)$ /portableac/admin/index.php?/$1 [L]

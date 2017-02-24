@@ -1,0 +1,11 @@
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
+
+ERROR - 2017-01-27 00:07:25 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/dipp_driving/system/database/drivers/mysql/mysql_driver.php 92
+ERROR - 2017-01-27 00:10:54 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/dipp_driving/system/database/drivers/mysql/mysql_driver.php 92
+ERROR - 2017-01-27 00:12:12 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/dipp_driving/system/database/drivers/mysql/mysql_driver.php 92
+ERROR - 2017-01-27 02:31:26 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/dipp_driving/system/database/drivers/mysql/mysql_driver.php 92
+ERROR - 2017-01-27 02:45:40 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/dipp_driving/system/database/drivers/mysql/mysql_driver.php 92
+ERROR - 2017-01-27 03:22:21 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/dipp_driving/system/database/drivers/mysql/mysql_driver.php 92
+ERROR - 2017-01-27 03:25:31 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/dipp_driving/system/database/drivers/mysql/mysql_driver.php 92
+ERROR - 2017-01-27 05:40:25 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/dipp_driving/system/database/drivers/mysql/mysql_driver.php 92
+ERROR - 2017-01-27 05:50:33 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /var/www/html/dipp_driving/system/database/drivers/mysql/mysql_driver.php 92

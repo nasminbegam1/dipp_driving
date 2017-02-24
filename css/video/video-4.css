@@ -1,0 +1,42 @@
+/* Video 4 */
+.c-1 {margin: 26.5% 0 0 37.5%;}
+.a-1 {margin: 2% 0 0 4%;width: 80%;} 
+
+.c-2 {margin: 25.5% 0 0 39.5%;}
+.a-2 {margin: 2% 0 0 5%;width: 80%;} 
+
+.c-3 {margin: 27.5% 0 0 57.5%;}
+.a-3 {margin: 2% 0 0 14%;width: 80%;} 
+
+.c-4 {margin: 23.5% 0 0 52.5%;}
+.a-4 {margin: 2% 0 0 12%;width: 80%;} 
+
+.c-5,
+.c-6,
+.c-7,
+.c-8,
+.c-9{ border-color: red; display: none; }
+
+.c-5 {margin: 21% 0  0 29%;width: 13%;height: 22%; cursor: pointer;display:  none; opacity: 0; }
+
+/* 
+*	Hazard 
+*/
+.c-5.cv_move { animation-duration: 5s; animation-name: cv_move;margin: 23.5% 0 0 73%;width: 14%;height: 26%; display: block; }
+@-webkit-keyframes cv_move { 
+	0% { margin: 23.5% 0 0 73% }
+	20% { margin: 21.5% 0 0 69%;width: 18%;height: 32%; } 
+	40% { margin: 22.5% 0 0 66% }
+	60% { margin: 22.5% 0 0 62%;width: 20%;height: 36%;  }
+	100% { margin: 23.5% 0 0 56%;width: 22%;height: 39%; }
+}
+
+.a-5 { margin: 36.5% 0 0 10%; } 
+.a-6 { margin: 36.5% 0 0 10%; } 
+.a-7 { margin: 36.5% 0 0 10%; } 
+.a-8 { margin: 36.5% 0 0 10%; } 
+.a-9 { margin: 36.5% 0 0 10%; } 
+
+.c-10 {margin: 22.5% 0 0 35.5%;width:  12%;height: 21%;}
+.a-10 {margin: 2% 0 0 8%;width: 80%;} 
+.c-10-b {margin: 27.5% 0 0 66.5%;width:  12%;height: 21%;
